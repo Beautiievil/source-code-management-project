@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "75925630-b1db-4248-814b-e4600b129967",
+		"name": "search and view github user success",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "search_github_username_success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "044a0830-d203-44c1-8014-c51103b85c71",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Total Count should be \"+ data[\"assert\"][\"total_count\"], function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.total_count).to.eql(data[\"assert\"][\"total_count\"]);",
+							"});",
+							"",
+							"pm.test(\"Login should be \"+ data[\"assert\"][\"items\"][\"login\"], function () {",
+							"    pm.expect(pm.response.text()).to.include(data[\"assert\"][\"items\"][\"login\"]);",
+							"});",
+							"",
+							"pm.test(\"ID should be \"+ data[\"assert\"][\"items\"][\"id\"], function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items[0].id).to.eql(data[\"assert\"][\"items\"][\"id\"]);",
+							"});",
+							"",
+							"pm.test(\"node_id should be \"+ data[\"assert\"][\"items\"][\"node_id\"], function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items[0].node_id).to.eql(data[\"assert\"][\"items\"][\"node_id\"]);",
+							"});",
+							"",
+							"",
+							"pm.test(\"Type should be \"+ data[\"assert\"][\"items\"][\"type\"], function() {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items[0].type).to.include(data[\"assert\"][\"items\"][\"type\"]);",
+							"});",
+							"",
+							"pm.test(\"Avatar_url should be \"+ data[\"assert\"][\"items\"][\"avatar_url\"], function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.items[0].avatar_url).to.eql(data[\"assert\"][\"items\"][\"avatar_url\"]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/search/users?order=asc&q=beautiievil&sort=repositories",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"search",
+						"users"
+					],
+					"query": [
+						{
+							"key": "order",
+							"value": "asc"
+						},
+						{
+							"key": "q",
+							"value": "beautiievil"
+						},
+						{
+							"key": "sort",
+							"value": "repositories"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "view_github_username_success",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "024998f3-58c1-4636-93ae-a191a0201ec7",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Login should be \"+ data[\"assert\"][\"items\"][\"login\"], function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.login).to.eql(data[\"assert\"][\"items\"][\"login\"]);",
+							"});",
+							"",
+							"pm.test(\"ID should be \"+ data[\"assert\"][\"items\"][\"id\"], function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.id).to.eql(data[\"assert\"][\"items\"][\"id\"]);",
+							"});",
+							"",
+							"pm.test(\"node_id should be \"+ data[\"assert\"][\"items\"][\"id\"], function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.node_id).to.eql(data[\"assert\"][\"items\"][\"node_id\"]);",
+							"});",
+							"",
+							"pm.test(\"Type should be \"+ data[\"assert\"][\"items\"][\"type\"], function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.type).to.eql(data[\"assert\"][\"items\"][\"type\"]);",
+							"});",
+							"",
+							"pm.test(\"Avatar_url should be \"+ data[\"assert\"][\"items\"][\"avatar_url\"], function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.avatar_url).to.eql(data[\"assert\"][\"items\"][\"avatar_url\"]);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/users/beautiievil",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"beautiievil"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

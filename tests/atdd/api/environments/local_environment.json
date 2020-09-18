@@ -1,0 +1,19 @@
+{
+	"id": "b90503f8-b6c4-4cbf-a203-206626fb7a9a",
+	"name": "local_github",
+	"values": [
+		{
+			"key": "url",
+			"value": "https://api.github.com",
+			"enabled": true
+		},
+		{
+			"key": "q",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-09-18T08:25:52.447Z",
+	"_postman_exported_using": "Postman/7.31.1"
+}

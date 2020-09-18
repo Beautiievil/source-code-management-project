@@ -1,0 +1,19 @@
+[{
+    "case": "Search GitHub User Beautiievil should be get ID 51253593 and Login Beautiievil",
+    "arrange": {
+        "order": "asc",
+        "q": "beatiievil",
+        "sort": "repositories"
+    },
+    "assert": {
+        "total_count": 1,
+        "incomplete_results": false,
+        "items": {
+                "login": "Beautiievil",
+                "id": 51253593,
+                "node_id": "MDQ6VXNlcjUxMjUzNTkz",
+                "avatar_url": "https://avatars2.githubusercontent.com/u/51253593?v=4",
+                "type": "User"
+                }             
+    }
+}]
