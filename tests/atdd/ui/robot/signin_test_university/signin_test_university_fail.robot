@@ -1,7 +1,7 @@
 *** Settings ***
 Library    SeleniumLibrary
 Test Teardown    ปิดบราวเซอร์
-Resource    signin_with_existingemail_resource.robot
+Resource    /Users/shanyarnuchponsa/Playground/source-code-management-project/tests/atdd/ui/resources/signin_test_university_resource.robot
 
 
 *** Test Cases ***

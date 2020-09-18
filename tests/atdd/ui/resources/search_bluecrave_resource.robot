@@ -3,7 +3,7 @@ ${URL}    http://www.google.co.th
 
 *** Keywords ***
 เปิด Chrome และไปที่ Google
-    Open Browser    ${URL}    chrome
+    Open Browser    ${URL}    headlesschrome
 
 ค้นหาคำว่า "ถ้ำสีฟ้า"
     Input Text    q    ถ้ำสีฟ้า
@@ -16,8 +16,8 @@ ${URL}    http://www.google.co.th
 
 คลิ๊ก link 
     Click Link    //div[@class="r"]//a
-    sleep    0.5
-    Wait Until Element Is Visible    //*[@id="m-content"]/section[2]/div/div/div[1]/div/div/div[2]/article[2]/div[1]/div[1]/div/div[1]/div/figure/div/div/img
+    sleep    1
+    Wait Until Page Contains Element    //*[@id="m-content"]/section[2]/div/div/div[1]/div/div/div[2]/article[2]/div[1]/div[1]/div/div[1]/div/figure/div/div/img
     
 
 ดูหน้ารายละเอียด
